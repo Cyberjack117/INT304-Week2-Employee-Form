@@ -1,0 +1,39 @@
+/* Close visual approximation of the screenshot on page 4 of the Week 2 manual.
+   This is ORIGINAL CSS, not a verbatim copy of the instructor's GitHub CSS. */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #222; background: #fff; }
+.employee-app { width: min(100%, 600px); margin: 36px auto; padding: 0 18px; }
+.employee-form-section h1, .employee-list h2 {
+  text-align: center; font-size: 32px; margin: 0 0 26px; font-weight: 700;
+}
+.employee-form { width: min(100%, 460px); margin: 0 auto; }
+.form-row { display: flex; align-items: center; gap: 9px; margin-bottom: 24px; }
+.form-row label { flex: 0 0 112px; text-align: right; font-size: 20px; }
+.form-row input {
+  flex: 1; width: 100%; min-width: 0; height: 51px;
+  padding: 10px 12px; border: 2px solid #d9d9d9;
+  border-radius: 5px; font: inherit; font-size: 18px; background-color: #fff;
+}
+.form-row input:focus-visible, .form-actions button:focus-visible {
+  outline: 3px solid #1c639e; outline-offset: 3px;
+}
+.form-actions { margin-left: 121px; margin-top: 4px; }
+.form-actions button {
+  border: 0; border-radius: 5px; padding: 12px 23px;
+  background: #087fca; color: white; font-size: 18px; cursor: pointer;
+}
+.form-actions button:hover { background: #0569a7; }
+.employee-list { margin-top: 28px; }
+.employee-list h2 { margin-bottom: 12px; }
+.employee-list ul { max-width: 330px; padding-left: 22px; margin: 12px auto; }
+.employee-list li { font-size: 18px; margin: 6px 0; }
+.success-message { text-align: center; color: #175c35; font-size: 16px; }
+@media (max-width: 480px) {
+  .employee-app { padding: 0 16px; margin-top: 25px; }
+  .employee-form-section h1, .employee-list h2 { font-size: 28px; }
+  .form-row { display: block; margin-bottom: 18px; }
+  .form-row label { display: block; text-align: left; margin: 0 0 7px; font-size: 18px; }
+  .form-row input { width: 100%; }
+  .form-actions { margin-left: 0; }
+  .form-actions button { min-height: 44px; }
+}
