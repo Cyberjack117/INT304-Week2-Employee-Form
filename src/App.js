@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import EmployeeForm from './components/EmployeeForm';
-
+import EmployeeList from './components/EmployeeList';
 // Read saved employees once when the application first loads.
 function loadEmployees() {
   try {
@@ -34,19 +34,12 @@ function App() {
   }
 
   return (
-    <main className="employee-app">
-      <EmployeeForm onAddEmployee={addEmployee} />
-      <section className="employee-list" aria-labelledby="employee-list-heading">
-        <h2 id="employee-list-heading">Employee List</h2>
-        {message && <p role="status" className="success-message">{message}</p>}
-        <ul>
-          {employees.map((employee, index) => (
-            <li key={`${employee.email}-${index}`}>{employee.name}</li>
-          ))}
-        </ul>
-      </section>
-    </main>
-  );
+  <main className="employee-app">
+    <EmployeeForm onAddEmployee={addEmployee} />
+    <EmployeeList employees={employees} message={message} />
+  </main>
+);
+
 }
 
 export default App;
