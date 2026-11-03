@@ -78,3 +78,33 @@ body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #222; backgr
   text-align: center;
   color: green;
 }
+
+/* Final Project: Employee Search Styling */
+.employee-search {
+  max-width: 460px;
+  margin: 20px auto;
+}
+
+.employee-search label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.employee-search input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.employee-search input:focus-visible {
+  outline: 3px solid #1c639e;
+  outline-offset: 3px;
+}
+
+.employee-search input:focus {
+  border-color: #087fca;
+}
