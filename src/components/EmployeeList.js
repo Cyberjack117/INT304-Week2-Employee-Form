@@ -1,7 +1,13 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 
 function EmployeeList({ employees, message }) {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredEmployees = employees.filter((employee) =>
+    employee.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    employee.email.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <section className="employee-list">
       <h2>Employee List</h2>
@@ -10,11 +16,24 @@ function EmployeeList({ employees, message }) {
         <p className="success-message">{message}</p>
       )}
 
+      <div className="employee-search">
+        <label htmlFor="employee-search">Search Employees</label>
+        <input
+          id="employee-search"
+          type="search"
+          placeholder="Search by name or email"
+          value={searchTerm}
+          onChange={(event) => setSearchTerm(event.target.value)}
+        />
+      </div>
+
       {employees.length === 0 ? (
         <p>No employees have been added yet.</p>
+      ) : filteredEmployees.length === 0 ? (
+        <p>No employees match your search.</p>
       ) : (
         <ul>
-          {employees.map((employee, index) => (
+          {filteredEmployees.map((employee, index) => (
             <li key={`${employee.email}-${index}`}>
               <strong>{employee.name}</strong>
               <p>Email: {employee.email}</p>
